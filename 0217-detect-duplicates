@@ -1,0 +1,7 @@
+Problem: https://leetcode.com/problems/contains-duplicate/
+
+Solution 1 (with a Sort and Nlog(N) time complexity): https://leetcode.com/problems/contains-duplicate/submissions/995338243/
+
+Solution 2 (with a Set (visited) with Linear time complexity and Linear space: https://leetcode.com/problems/contains-duplicate/submissions/995342277/
+
+
