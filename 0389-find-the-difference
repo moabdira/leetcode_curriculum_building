@@ -1,0 +1,31 @@
+Problem: https://leetcode.com/problems/find-the-difference/description/
+
+Solution 1: Time Complexity: O(N) and Space Complexity: O(1)
+fun findTheDifference(s: String, t: String): Char = kotlin.math.abs(s.sumBy{ it.toInt() } - t.sumBy{ it.toInt() }).toChar()
+
+Solution 2: Time Complexity: O(N) and Space Complexity: O(N)
+    fun findTheDifference(s: String, t: String): Char {
+        val visited = mutableMapOf<Char, Int>()
+
+        s.forEach {  
+            if(visited.contains(it))
+                visited[it] = visited[it]?.plus(1) ?: 0
+            else
+                visited[it] = 1
+        }
+
+        t.forEach {
+            if(!visited.contains(it))
+                return it
+            
+            val value = visited[it] ?: 0
+            if(value < 2) 
+                visited.remove(it)
+            else
+                visited[it] = visited[it]?.minus(1) ?: 0
+        }
+
+        return t.last()
+    }
+
+
