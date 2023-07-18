@@ -1,0 +1,12 @@
+Problem: https://leetcode.com/problems/running-sum-of-1d-array/description/
+
+Solution: 
+    fun runningSum(nums: IntArray): IntArray {
+        var sum = 0
+        nums.forEachIndexed{ index, element ->
+            sum += element
+            nums[index] = sum
+        }
+
+        return nums
+    }
