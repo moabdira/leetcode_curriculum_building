@@ -17,5 +17,5 @@ class Solution {
 
 Solution 3:
 class Solution {
-    fun defangIPaddr(address: String): String = address.replace(Regex("[/.]"), "[.]")
+    fun defangIPaddr(address: String): String = address.replace(Regex("\\."), "[.]")
 }
